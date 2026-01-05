@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "github@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "firebase@claude-plugins-official": true,
+    "ralph-wiggum@claude-code-plugins": true
+  }
+}
