@@ -4,46 +4,81 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a documentation and reference workspace for web scraping, data extraction, and automation workflows. It is not a traditional software project with source code.
+**Zion Direct Care** - A single-page website for Adam Hyatt's mobile medical practice in Springdale, UT (near Zion National Park).
+
+**Live Site**: http://zion.refreshbiology.com (temporary preview domain)
+**GitHub Repo**: https://github.com/jonchyatt/zion-direct-care-website
+**Future Domain**: ziondirectcare.com
+
+## Tech Stack
+
+- Static HTML/CSS/JS (no build tools)
+- GitHub Pages hosting
+- Custom domain via Cloudflare DNS
+
+## Project Structure
+
+```
+├── index.html              # Main single-page website
+├── css/
+│   └── styles.css          # All styling (responsive)
+├── js/
+│   └── main.js             # Smooth scroll, mobile menu, form handling
+├── ZionDirectCareWaterfall.mp4  # Hero background video (licensed)
+├── ZionHeadshot.jpg        # Adam's professional headshot
+├── ZionDirectCard.PNG      # Business card (branding reference)
+├── ZionsDirectOfferings.md # Full website copy/content source
+├── firebase.json           # Firebase hosting config (alternative deploy)
+├── CNAME                   # GitHub Pages custom domain
+└── .gitignore
+```
+
+## Design
+
+**Colors** (from business card):
+- Primary: `#C84C0C` (rust/terracotta)
+- Secondary: `#F5E6C8` (cream)
+- Background: `#FFFFFF`
+
+**Fonts** (Google Fonts):
+- Headings: Playfair Display
+- Body: Montserrat
+
+## Key Sections
+
+1. **Hero** - Video background, logo, CTAs
+2. **Services** - Family/Urgent Care, IV Therapy, Weight Loss
+3. **About** - Provider bio with headshot
+4. **Why Choose Us** - 4 feature boxes
+5. **Service Areas** - Towns served
+6. **Pricing** - Transparent pricing tables
+7. **Contact** - Form + booking button
+8. **Footer** - Medicare disclaimer required
+
+## Pending Tasks
+
+- [ ] Add Tebra scheduling link (replace `href="#"` on `id="tebra-booking"` in index.html)
+- [ ] Set up final domain (ziondirectcare.com)
+- [ ] Consider adding Google Analytics
+
+## Commands
+
+**Deploy** (automatic on push to master):
+```bash
+git add . && git commit -m "Update" && git push
+```
+
+**Local preview**:
+Just open `index.html` in a browser (no server needed)
+
+## Content Source
+
+All website copy comes from `ZionsDirectOfferings.md` - edit that file for content changes, then update index.html accordingly.
 
 ## Enabled Plugins
 
-The workspace has the following Claude Code plugins enabled:
 - **GitHub** - Repository and PR management
-- **Commit Commands** - Git utilities (`/commit`, `/commit-push-pr`)
-- **Playwright** - Browser automation and testing
-- **Firebase** - Backend services and hosting
-- **Ralph Wiggum** - Loop-based development technique
-
-## Available MCP Tools
-
-### Firecrawl (Web Scraping & Data Extraction)
-See `firecrawl mcp server guide.md` for detailed documentation. Key tools:
-- `firecrawl_scrape` - Single page content extraction
-- `firecrawl_map` - Discover URLs on a website
-- `firecrawl_search` - Web search with optional scraping
-- `firecrawl_crawl` - Multi-page crawling
-- `firecrawl_extract` - Structured data extraction with schemas
-- `firecrawl_agent` - Autonomous web research agent
-
-### Playwright (Browser Automation)
-- `browser_navigate`, `browser_click`, `browser_type` - Page interactions
-- `browser_snapshot` - Accessibility snapshots (preferred over screenshots)
-- `browser_take_screenshot` - Visual captures
-- `browser_evaluate` - JavaScript execution
-
-### Firebase
-- Project management and configuration
-- App creation and SDK setup
-- Security rules management
-- Firestore, Realtime Database, Hosting, Storage initialization
-
-## Common Workflows
-
-**Web Research**: Use `firecrawl_search` to find pages, then `firecrawl_scrape` on relevant results.
-
-**Site Mapping**: Use `firecrawl_map` to discover URLs, then scrape or extract from specific pages.
-
-**Structured Extraction**: Use `firecrawl_extract` with a JSON schema to pull consistent data from multiple pages.
-
-**Autonomous Research**: Use `firecrawl_agent` when you don't know which URLs contain the information needed.
+- **Commit Commands** - Git utilities
+- **Playwright** - Browser automation/testing
+- **Firebase** - Alternative hosting option
+- **Firecrawl** - Web scraping (see `firecrawl mcp server guide.md`)
