@@ -115,24 +115,29 @@ function initContactForm() {
       return;
     }
 
-    // For now, show a message (replace with actual form submission later)
-    // You can integrate with Firebase, Formspree, or other form services
+    // Submit to Formspree
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-    alert('Thank you for your message! We will get back to you soon.\n\nFor immediate assistance, please call (435) 632-3690.');
-    form.reset();
-
-    // TODO: Replace with actual form submission
-    // Example with Formspree:
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   body: formData,
-    //   headers: { 'Accept': 'application/json' }
-    // }).then(response => {
-    //   if (response.ok) {
-    //     alert('Thank you! We will be in touch soon.');
-    //     form.reset();
-    //   }
-    // });
+    fetch('https://formspree.io/f/adam@ziondirectcare.com', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert('Thank you for your message! We will get back to you soon.');
+        form.reset();
+      } else {
+        alert('There was a problem sending your message. Please call (435) 632-3690 instead.');
+      }
+    }).catch(() => {
+      alert('There was a problem sending your message. Please call (435) 632-3690 instead.');
+    }).finally(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    });
   });
 }
 
