@@ -121,7 +121,7 @@ function initContactForm() {
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    fetch('https://formspree.io/f/adam@ziondirectcare.com', {
+    fetch('https://formspree.io/adam@ziondirectcare.com', {
       method: 'POST',
       body: formData,
       headers: { 'Accept': 'application/json' }
