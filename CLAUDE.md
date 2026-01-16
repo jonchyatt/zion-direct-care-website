@@ -6,15 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Zion Direct Care** - A single-page website for Adam Hyatt's mobile medical practice in Springdale, UT (near Zion National Park).
 
-**Live Site**: http://zion.refreshbiology.com (temporary preview domain)
+**Live Site**: https://ziondirectcare.com
 **GitHub Repo**: https://github.com/jonchyatt/zion-direct-care-website
-**Future Domain**: ziondirectcare.com
 
 ## Tech Stack
 
 - Static HTML/CSS/JS (no build tools)
 - GitHub Pages hosting
-- Custom domain via Cloudflare DNS
+- Custom domain via Squarespace DNS
 
 ## Project Structure
 
@@ -58,7 +57,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Pending Tasks
 
 - [ ] Add Tebra scheduling link (replace `href="#"` on `id="tebra-booking"` in index.html)
-- [ ] Set up final domain (ziondirectcare.com)
+- [x] Set up final domain (ziondirectcare.com)
 - [ ] Consider adding Google Analytics
 
 ## Commands
