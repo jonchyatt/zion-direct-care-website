@@ -56,7 +56,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Pending Tasks
 
-- [ ] Add Tebra scheduling link (replace `href="#"` on `id="tebra-booking"` in index.html)
+- [x] Add Tebra scheduling link (replace `href="#"` on `id="tebra-booking"` in index.html)
 - [x] Set up final domain (ziondirectcare.com)
 - [ ] Consider adding Google Analytics
 
