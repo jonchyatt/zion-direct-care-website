@@ -115,18 +115,21 @@ function initContactForm() {
       return;
     }
 
-    // Submit to Formspree
+    // Submit to FormSubmit.co
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    fetch('https://formspree.io/adam@ziondirectcare.com', {
+    fetch('https://formsubmit.co/ajax/adam@ziondirectcare.com', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
+      body: JSON.stringify(data),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json()).then(result => {
+      if (result.success) {
         alert('Thank you for your message! We will get back to you soon.');
         form.reset();
       } else {
